@@ -10,12 +10,24 @@ public class BalllBehavior : MonoBehaviour
     public Vector2 targetPosition;
     public float minSpeed;
     public float maxSpeed;
+    public float secondsToMaxSpeed;
+
+    public GameObject target;
+    public float minLaunchSpeed;
+    public float maxLaunchSpeed;
+    public float minTimeToLaunch; 
+    public float maxTimeToLaunch;
+    public float cooldown;
+    public bool launching;
+    public float launchDuration;
+    public float timeLastLaunch;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        int secondsToMaxSpeed = 30;
-        minSpeed = 0.75f;
-        maxSpeed = 2.0f; 
+        secondsToMaxSpeed = 45f;
+     //   minSpeed = 0.01f ;
+     //   maxSpeed = 15.0f;
 
       targetPosition =  getRandomPosition();
         
@@ -27,11 +39,15 @@ public class BalllBehavior : MonoBehaviour
     {
 
         Vector2 currentPos = gameObject.GetComponent<Transform>().position;
+        float distance = Vector2.Distance(currentPos, targetPosition);
 
-        if(targetPosition != currentPos) {
-            float currentSpeed = minSpeed;
+        if(distance > 0.1) {
+            float difficulty = getDifficultypercentage();
+            float currentSpeed = Mathf.Lerp(minSpeed, maxSpeed, difficulty);
+            currentSpeed = currentSpeed * Time.deltaTime;
             Vector2 newPosition = Vector2.MoveTowards(currentPos,targetPosition,currentSpeed);
             transform.position = newPosition;
+
         }
         else
         {
@@ -48,5 +64,26 @@ public class BalllBehavior : MonoBehaviour
         Vector2 v = new Vector2(randomX,randomY);
 
         return v;
+
     }
+
+
+    private float getDifficultypercentage()
+    {
+
+      // clamp01 ramge normalization 
+      float difficulty = Mathf.Clamp01(Time.timeSinceLevelLoad / secondsToMaxSpeed); 
+      
+      return difficulty; 
+
+    }
+
+
+    public void launch()
+    {
+
+    }
+
+
+
 }
