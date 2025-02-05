@@ -17,22 +17,22 @@ public class PinBehavior : MonoBehaviour
     {
 
 
-
+        cam = Camera.main; 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        cam = Camera.main;
+      
 
         mousePosG = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        newPosition = Vector2.MoveTowards(body.position, mousePosG, speed * Time.fixedDeltaTime);
+        newPosition = Vector2.MoveTowards(transform.position, mousePosG, speed * Time.fixedDeltaTime);
 
-        transform.position = newPosition;
+       transform.position = newPosition;
 
 
-
+      //  body.MovePosition(newPosition);
 
 
 

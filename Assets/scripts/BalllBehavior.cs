@@ -3,10 +3,10 @@ using UnityEngine;
 public class BalllBehavior : MonoBehaviour
 {
 
-    public float minX = -8.29f;
-    public float minY = -4.46f;
-    public float maxX =  8.42f;
-    public float maxY =  4.35f;
+    public float minX = -5.29f;
+    public float minY = -3.99f;
+    public float maxX =  7.12f;
+    public float maxY =  3.69f;
     public Vector2 targetPosition;
     public float minSpeed;
     public float maxSpeed;
