@@ -45,4 +45,16 @@ public class DashIconBehavior : MonoBehaviour
         label.SetText(message); 
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        string collided = collision.gameObject.tag;
+        Debug.Log("Collided with" + collided);
+        Debug.Log(collided);
+        if(collision.gameObject.tag == "Ball"||  collision.gameObject.tag == "Wall")
+        {
+            Debug.Log("gg");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+        }
+    }
 }

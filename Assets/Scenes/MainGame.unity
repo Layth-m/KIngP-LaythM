@@ -227,7 +227,6 @@ GameObject:
   - component: {fileID: 250893067}
   - component: {fileID: 250893069}
   - component: {fileID: 250893068}
-  - component: {fileID: 250893070}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -353,19 +352,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250893066}
   m_CullTransparentMesh: 1
---- !u!114 &250893070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250893066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c12ae63aa38f164aa7d97bd1bc82309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  overlay: {fileID: 633260989}
 --- !u!1 &402633857 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4883761474011384290, guid: a372981ca713dd84f9de64760fd6748e, type: 3}
@@ -1090,6 +1076,7 @@ GameObject:
   - component: {fileID: 905135527}
   - component: {fileID: 905135526}
   - component: {fileID: 905135525}
+  - component: {fileID: 905135528}
   m_Layer: 5
   m_Name: Dash_Icon
   m_TagString: Untagged
@@ -1200,6 +1187,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 905135523}
   m_CullTransparentMesh: 1
+--- !u!114 &905135528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905135523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c12ae63aa38f164aa7d97bd1bc82309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overlay: {fileID: 1697002722}
 --- !u!1 &921559358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1673,7 +1673,7 @@ GameObject:
   - component: {fileID: 1697002723}
   - component: {fileID: 1697002722}
   m_Layer: 5
-  m_Name: Image
+  m_Name: overlay
   m_TagString: overlay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

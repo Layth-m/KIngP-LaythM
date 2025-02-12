@@ -5,7 +5,7 @@ public class PinBehavior : MonoBehaviour
 
     public float dashSpeed = 12.0f; 
     public float baseSpeed = 8.0f;
-    static public float cooldownRate = 6.0f;
+    static public float cooldownRate = 5.0f;
     static public float cooldown;
     public bool dashing; 
     public Vector2 newPosition;
@@ -52,13 +52,14 @@ public class PinBehavior : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         string collided = collision.gameObject.tag;
-        Debug.Log("Collided with "+ collided);
-        if (collided == "Ball" || collided == "Wall")
+        Debug.Log("Collided with" + collided);
+        Debug.Log(collided);
+        if (collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Wall")
         {
-            Debug.Log("Game Over");
+            Debug.Log("gg");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
     }
-
 
 
 
@@ -101,8 +102,7 @@ public class PinBehavior : MonoBehaviour
 
 
 
-
-
+ 
 
 
 }
