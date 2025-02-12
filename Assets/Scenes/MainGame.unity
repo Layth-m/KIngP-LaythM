@@ -148,6 +148,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 402633857}
     - target: {fileID: 565393414271162469, guid: 8acf7f95e3d41424b9647ac49f38c194, type: 3}
+      propertyPath: maxSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 565393414271162469, guid: 8acf7f95e3d41424b9647ac49f38c194, type: 3}
       propertyPath: launching
       value: 0
       objectReference: {fileID: 0}
@@ -270,7 +274,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -361,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c12ae63aa38f164aa7d97bd1bc82309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overlay: {fileID: 0}
+  overlay: {fileID: 633260989}
 --- !u!1 &402633857 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4883761474011384290, guid: a372981ca713dd84f9de64760fd6748e, type: 3}
@@ -379,8 +383,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882b8251e9015774bafac4e84a9bf2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 12
-  baseSpeed: 2
+  dashSpeed: 10
+  baseSpeed: 6
   dashing: 0
   newPosition: {x: 0, y: 0}
   currentSpeed: 2
@@ -995,7 +999,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

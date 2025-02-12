@@ -24,7 +24,7 @@ public class DashIconBehavior : MonoBehaviour
             }
         }
         cooldownRate = PinBehavior.cooldownRate;
-        overlay.fillAmount = 6.0f;
+        overlay.fillAmount = 0.0f;
     }
 
     // Update is called once per frame
@@ -33,9 +33,12 @@ public class DashIconBehavior : MonoBehaviour
 
         cooldown = PinBehavior.cooldown;
         string message = " ";
+
         if(PinBehavior.cooldown> 0.0)
         {
+            float fill = cooldown / cooldownRate;
             message = string.Format("{0:0.0}",PinBehavior.cooldown);
+            overlay.fillAmount = fill;
         }
 
 
