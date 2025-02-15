@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class BalllBehavior : MonoBehaviour
@@ -27,14 +28,14 @@ public class BalllBehavior : MonoBehaviour
     public float timeLaunchStart;
     Rigidbody2D body;
     public bool rerouting;
-
+  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         secondsToMaxSpeed = 45f;
-     //   minSpeed = 0.01f ;
-     //   maxSpeed = 15.0f;
-
+        //   minSpeed = 0.01f ;
+        //   maxSpeed = 15.0f;
+        initialPosition();
       targetPosition =  getRandomPosition();
         cooldown = Random.Range(2, 10);
         launchDuration = Random.Range(3, 15);
@@ -141,7 +142,10 @@ public class BalllBehavior : MonoBehaviour
 
     }
 
-
+    public void setTarget(GameObject pin)
+    {
+        target = pin;
+    }
     public void launch()
     {
         Rigidbody2D targetBody = target.GetComponent<Rigidbody2D>();
@@ -188,12 +192,8 @@ public class BalllBehavior : MonoBehaviour
 
         Debug.Log(this + "Collided with: " + collision.gameObject.name);
     }
-    public void initialPostion()
-    {
-        body = GetComponent<Rigidbody2D>();
-        body.position = getRandomPosition();
-    }
-    public void initalPosition()
+ 
+    public void initialPosition()
     {
         body = GetComponent<Rigidbody2D>();
         body.position = getRandomPosition();
@@ -220,5 +220,15 @@ public class BalllBehavior : MonoBehaviour
         {
             rerouting = true;
         }
+    }
+
+
+    public void setBounds(float miX, float maX, float miY, float maY)
+    {
+        minX = miX;
+        maxX = maX;
+        minY = miY;
+        maxY = maY;
+
     }
 }

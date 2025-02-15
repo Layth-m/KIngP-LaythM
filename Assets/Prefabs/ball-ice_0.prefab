@@ -102,15 +102,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ec8b647cc118d4fad583e26964985c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minX: -8.29
-  minY: -4.46
-  maxX: 8.42
-  maxY: 4.35
+  minX: -4.96
+  minY: -3.51
+  maxX: 6.43
+  maxY: 3.52
   targetPosition: {x: 0, y: 0}
   minSpeed: 0.01
   maxSpeed: 15
   secondsToMaxSpeed: 45
-  target: {fileID: 0}
+  target: {fileID: 4883761474011384290, guid: a372981ca713dd84f9de64760fd6748e, type: 3}
   minLaunchSpeed: 2
   maxLaunchSpeed: 10
   minTimeToLaunch: 5
@@ -118,6 +118,7 @@ MonoBehaviour:
   launching: 0
   timeLastLaunch: 0
   timeLaunchStart: 0
+  rerouting: 0
 --- !u!50 &-4322906518999089157
 Rigidbody2D:
   serializedVersion: 5
