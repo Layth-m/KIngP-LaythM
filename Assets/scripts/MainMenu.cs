@@ -15,11 +15,14 @@ public class Main_menu : MonoBehaviour
     }
 
 
-    public void gotoGame() { 
+    public void gotoGame()
+
+
+    { 
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame");
 
     
-        }
+    }
 
 
 
