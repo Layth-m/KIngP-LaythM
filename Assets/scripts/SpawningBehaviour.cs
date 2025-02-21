@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using UnityEngine.UI;
 public class SpawningBehaviour : MonoBehaviour
 {
@@ -16,11 +16,14 @@ public class SpawningBehaviour : MonoBehaviour
 
     public float minY;
     public float maxY;
+
+    public Pins pinsDB;
  
     void Start()
     {
         spawnBall();
         spawnRatio = Random.Range(minSpawn, maxSpawn);
+        spawnPin();
     }
 
     void spawnBall()
@@ -48,5 +51,11 @@ public class SpawningBehaviour : MonoBehaviour
         {
             spawnBall();
         }
+    }
+
+    void spawnPin()
+    {
+        targetObject = Instantiate(pinsDB.getPin(CharacterManager.selection).prefab, 
+            new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
     }
 }

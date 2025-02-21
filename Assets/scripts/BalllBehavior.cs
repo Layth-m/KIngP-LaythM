@@ -180,8 +180,10 @@ public class BalllBehavior : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+
     {
-        if(collision.gameObject.tag == "Wall")
+        Debug.Log(this + "collided with" + collision.gameObject.name);
+        if (collision.gameObject.tag == "Wall")
         {
             targetPosition = getRandomPosition();
         }
@@ -231,4 +233,7 @@ public class BalllBehavior : MonoBehaviour
         maxY = maY;
 
     }
+   
+
+
 }
