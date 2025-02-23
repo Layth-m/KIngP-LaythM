@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+using System.Collections.Generic;
+
 public class CharacterManager : MonoBehaviour
 {
     public Pins pinsDb;
@@ -33,6 +36,7 @@ public class CharacterManager : MonoBehaviour
 
     public void next()
     {
+        StartCoroutine(WaitForSoundTransition());
         int numberPins = pinsDb.getCount();
         if(selection < numberPins - 1)
         {
@@ -48,6 +52,8 @@ public class CharacterManager : MonoBehaviour
 
     public void previous()
     {
+        StartCoroutine(WaitForSoundTransition());
+
         if (selection > 0)
         {
             selection = selection - 1;
@@ -57,5 +63,16 @@ public class CharacterManager : MonoBehaviour
             selection = pinsDb.getCount() - 1;
         }
         updateCharcter();
+    }
+
+    private IEnumerator WaitForSoundTransition()
+    {
+        AudioSource audioSource = GetComponentInChildren<AudioSource>();
+        audioSource.Play();
+
+        yield return new WaitForSeconds(audioSource.clip.length);
+
+
+      
     }
 }

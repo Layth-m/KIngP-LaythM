@@ -12,6 +12,7 @@ public class Main_menu : MonoBehaviour
 
         StartCoroutine(WaitForSoundTransition("CharacterSelection"));
         UnityEngine.SceneManagement.SceneManager.LoadScene("CharacterSelection");
+
     }
     public void gotoGame()
 
@@ -31,6 +32,7 @@ public class Main_menu : MonoBehaviour
 
     private IEnumerator WaitForSoundTransition(string sceneName)
     {
+        
         AudioSource audioSource = GetComponentInChildren<AudioSource>();
         audioSource.Play();
 

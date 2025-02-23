@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 public class PinBehavior : MonoBehaviour
 {
 
@@ -18,7 +19,9 @@ public class PinBehavior : MonoBehaviour
 
     public float timedashStart;
     public float timedashEnd;
-        
+
+    public AudioSource[] audioSources;
+
     // Start is called once before
     // the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,7 +29,9 @@ public class PinBehavior : MonoBehaviour
 
 
         cam = Camera.main;
-        dashing = false; 
+        dashing = false;
+
+        audioSources = GetComponents<AudioSource>();
     }
     void Update()
     {
@@ -57,7 +62,7 @@ public class PinBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Wall")
         {
             Debug.Log("gg");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            StartCoroutine(WaitForSoundAndTransition());
         }
     }
 
@@ -95,14 +100,27 @@ public class PinBehavior : MonoBehaviour
                 currentSpeed = dashSpeed;
 
                 timedashStart = Time.time;
+                if (audioSources[1].isPlaying)
+                {
+                    audioSources[1].Stop();
+                }
+                audioSources[1].Play();
             }
         }
+    }
+
+    private IEnumerator WaitForSoundAndTransition()
+    {
+        
+        audioSources[0].Play();
+
+        yield return new WaitForSeconds(audioSources[0].clip.length);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
     }
 
 
 
 
- 
 
 
 }
